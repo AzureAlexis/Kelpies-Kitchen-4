@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Kelpies Kitchen 4.sln"
+    "dotnet.defaultSolution": "Kelpies-Kitchen-4.sln"
 }
