@@ -4,43 +4,51 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //get, player, rb, anim
+    //get player, rb, anim dunno if we are going to have anims
     public Transform player;
     public Rigidbody2D rb;
     public Animator anim;
-    public float speed;
+    public int speed;
 
     void Update()
     {
-        Movement();
+        Movement(FindLocation(player.position));
+        Shoot();
     }
 
-    void Movement()
+    public virtual Vector2 FindLocation(Vector2 player)
     {
-        Vector2 player = this.player.position;
+        return player;//this is for melee enemies, overrides in ranged enemies
+    }
+
+    public virtual void Shoot(){}
+
+    void Movement(Vector2 location)
+    {
+        //I need to do this a lot better
         float x = this.transform.position.x;
         float y = this.transform.position.y;
-        if (player.x<x)
+        if (location.x<x)
         {
             x=-speed;
-        } else if (player.x>x)
+        } else if (location.x>x)
         {
             x=speed;
         }else 
         {
             x=0;
         }
-        if (player.y<y)
+        if (location.y<y)
         {
             y=-speed;
-        } else if (player.y>y)
+        } else if (location.y>y)
         {
             y=speed;
         } else 
         {
             y=0;
         }
-
+        
         rb.velocity = new Vector2(x,y);
 
     }
