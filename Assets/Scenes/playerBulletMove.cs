@@ -15,7 +15,7 @@ public class playerBulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().MovePosition(transform.position += transform.right * 0.01f);
+        GetComponent<Rigidbody2D>().MovePosition(transform.position += transform.right * 0.1f);
         relPos = cam.WorldToViewportPoint(transform.position);
         if(relPos.x > 1 || relPos.x < 0 || relPos.y > 1 || relPos.y < 0) {
             Destroy(gameObject);
