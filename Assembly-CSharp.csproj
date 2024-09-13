@@ -67,6 +67,10 @@
     <Compile Include="Assets/Scripts/RangedEnemy.cs" />
     <Compile Include="Assets/Scenes/playerBulletMove.cs" />
     <Compile Include="Assets/Scenes/playermove.cs" />
+    <Compile Include="Assets/Scenes/camMove.cs" />
+    <Compile Include="Assets/LevelTransition.cs" />
+    <Compile Include="Assets/Scenes/doors.cs" />
+    <Compile Include="Assets/TextManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
