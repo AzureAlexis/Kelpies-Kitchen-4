@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerBulletMove : MonoBehaviour
+public class enemyBulletMove : MonoBehaviour
 {
     Camera cam;
     Vector3 relPos;
@@ -15,7 +15,7 @@ public class playerBulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().MovePosition(transform.position += transform.right * Time.deltaTime * 20);
+        GetComponent<Rigidbody2D>().MovePosition(transform.position += transform.right * Time.deltaTime * 2);
         relPos = cam.WorldToViewportPoint(transform.position);
         if(relPos.x > 1 || relPos.x < 0 || relPos.y > 1 || relPos.y < 0) {
             Destroy(gameObject);
