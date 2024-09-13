@@ -71,11 +71,17 @@
     <Compile Include="Assets/Scenes/playerBulletMove.cs" />
     <Compile Include="Assets/Scenes/playermove.cs" />
     <Compile Include="Assets/Scenes/camMove.cs" />
+<<<<<<< HEAD
+    <Compile Include="Assets/LevelTransition.cs" />
+    <Compile Include="Assets/Scenes/doors.cs" />
+    <Compile Include="Assets/TextManager.cs" />
+=======
     <Compile Include="Assets/Scenes/foodDrop.cs" />
     <Compile Include="Assets/Scenes/doors.cs" />
     <Compile Include="Assets/Scenes/enemyHealth.cs" />
     <Compile Include="Assets/Scenes/enemyBulletMove.cs" />
     <Compile Include="Assets/Scenes/bossShoot.cs" />
+>>>>>>> de963af3c8c6eaf4c52b70595e5fe296f9a02dd7
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

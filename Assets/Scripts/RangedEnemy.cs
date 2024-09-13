@@ -25,7 +25,7 @@ public class RangedEnemy : Enemy
 
     public override void Shoot()
     {
-        GameObject.Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 0));//change rotation to the angle
+        GameObject.Instantiate(bullet, transform.position, this.transform.rotation);//change rotation to the angle
         //shoot, i need to find an angle and idk how to do that
     }
 }

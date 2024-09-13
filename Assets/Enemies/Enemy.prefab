@@ -103,6 +103,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rb: {fileID: -5974339065906793644}
   anim: {fileID: 4508068553513267360}
+  speed: 0
 --- !u!50 &-5974339065906793644
 Rigidbody2D:
   serializedVersion: 4
