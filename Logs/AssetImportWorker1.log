@@ -4131,4 +4131,15 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+<<<<<<< HEAD
+========================================================================
+Received Import Request.
+  Time since last request: 1516.743180 seconds.
+  path: Assets/Scenes/krakenBeef.prefab
+  artifactKey: Guid(50f37bffa398f4e3bbf4b99350cda373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/krakenBeef.prefab using Guid(50f37bffa398f4e3bbf4b99350cda373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '999feded7ee3a2a0111a87037d5cdf00') in 0.029427 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+=======
 >>>>>>> de963af3c8c6eaf4c52b70595e5fe296f9a02dd7
+>>>>>>> 65eb18dfb9c376483c0aadcaec6d8d168a78b563
