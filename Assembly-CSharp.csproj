@@ -66,10 +66,12 @@
   <ItemGroup>
     <Compile Include="Assets/Scenes/powerDrop.cs" />
     <Compile Include="Assets/Scripts/Enemy.cs" />
+    <Compile Include="Assets/Scenes/foodManager.cs" />
     <Compile Include="Assets/Scripts/RangedEnemy.cs" />
     <Compile Include="Assets/Scenes/playerBulletMove.cs" />
     <Compile Include="Assets/Scenes/playermove.cs" />
     <Compile Include="Assets/Scenes/camMove.cs" />
+    <Compile Include="Assets/Scenes/foodDrop.cs" />
     <Compile Include="Assets/Scenes/doors.cs" />
     <Compile Include="Assets/Scenes/enemyHealth.cs" />
     <Compile Include="Assets/Scenes/enemyBulletMove.cs" />

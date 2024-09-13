@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 
-public class enemyHealth : MonoBehaviour
+public class foodDrop : MonoBehaviour
 {
-    public int hp;
-    public GameObject drop;
+    public int id;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,11 @@ public class enemyHealth : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.gameObject.tag == "bullet")
+        if(other.gameObject.tag == "Player")
         {
-            GameObject.Instantiate(drop, transform.position, transform.rotation);
+            GameObject.Find("Canvas").GetComponent<foodManager>().AddFood(id);
             Destroy(gameObject);
         }
     }

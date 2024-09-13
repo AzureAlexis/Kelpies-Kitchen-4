@@ -23,17 +23,17 @@ public class doors : MonoBehaviour
 		if(other.gameObject.tag == "Player") {
 			relPos = cam.GetComponent<Camera>().WorldToViewportPoint(transform.position);
 			Debug.Log(relPos);
-			if(relPos.x < 0.5) {
+			if(relPos.y > 0.7) {
+				cam.GetComponent<camMove>().SetTarget(transform.position + new Vector3(3, 5.5f, -10f));
+			}
+			else if(relPos.y < 0.3) {
+				cam.GetComponent<camMove>().SetTarget(transform.position + new Vector3(3, -5.5f, -10f));
+			}
+			else if(relPos.x < 0.3) {
 				cam.GetComponent<camMove>().SetTarget(transform.position + new Vector3(-4.5f, 0, -10f));
 			}
-			else if(relPos.x > 0.5) {
+			else if(relPos.x > 0.6) {
 				cam.GetComponent<camMove>().SetTarget(transform.position + new Vector3(10.5f, 0, -10f));
-			}
-			else if(relPos.y > 0.5) {
-				cam.GetComponent<camMove>().SetTarget(transform.position + new Vector3(-3, 0, -10f));
-			}
-			else if(relPos.y < 0.5) {
-				cam.GetComponent<camMove>().SetTarget(transform.position + new Vector3(-3, 0, -10f));
 			}
 		}
 	}
