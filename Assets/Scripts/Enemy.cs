@@ -8,60 +8,38 @@ public class Enemy : MonoBehaviour
     //get player, rb, anim dunno if we are going to have anims
     public Transform player;
     public Rigidbody2D rb;
-    public Animator anim;
     public int speed;
+    public int health;
+    public int maxHealth;
+
+    void Awake()
+    {
+        health = maxHealth;
+    }
 
     void Update()
     {
-        Movement(FindLocation(player.position));
-        Shoot();
+        Movement();
     }
 
-    public virtual Vector2 FindLocation(Vector2 player)
+    void Movement()
     {
-        return player;//this is for melee enemies, overrides in ranged enemies
+        Vector3 direction = (player.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
+        rb.velocity = new Vector3(direction.x, direction.y) * speed;
+
     }
 
-    public virtual void Shoot(){}
-
-    void Movement(Vector3 location)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        /*I need to do this a lot better
-        float x = this.transform.position.x;
-        float y = this.transform.position.y;
-        if (location.x<x)
+        if(other.gameObject.tag == "bullet")
         {
-            x=-speed;
-        } else if (location.x>x)
-        {
-            x=speed;
-        }else 
-        {
-            x=0;
+            health -= 1;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
-        if (location.y<y)
-        {
-            y=-speed;
-        } else if (location.y>y)
-        {
-            y=speed;
-        } else 
-        {
-            y=0;
-        }
-        
-        transform.right = location - transform.position;
-        if(this.transform.position.x<location.x || this.transform.position.y<location.y)
-        {
-            Vector2 v =  transform.right;
-            rb.velocity = new Vector2(v.x,v.y) * speed;
-        }
-        */
-        Vector3 diff = location - transform.position;
-        diff.Normalize();
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot_z);
-
-
     }
 }
