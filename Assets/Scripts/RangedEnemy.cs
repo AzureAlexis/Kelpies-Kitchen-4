@@ -3,29 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class RangedEnemy : Enemy
+public class RangedEnemy : MonoBehaviour
 {
+    public Transform player;
+    public Rigidbody2D rb;
+    public int speed;
     public int distance;
     public GameObject bullet;
-    public override Vector2 FindLocation(Vector2 player)
-    {
-        Vector2 us = this.transform.position;
-        if (Math.Pow((Math.Abs(player.x-us.x)),2)+(Math.Pow(Math.Abs(player.y-us.y),2)) == Math.Pow(distance,2))//I can definantly do this better
-        {
-            return us;
-        } else if(Math.Pow((Math.Abs(player.x-us.x)),2)+(Math.Pow(Math.Abs(player.y-us.y),2)) < Math.Pow(distance,2))
-        {
-            return -player;//this fucks stuff up but only sometimes
-        }else 
-        {
-            return player;
-        }
-        
-    }
+    float shootDelay = 0;
+    public int health;
+    public int maxHealth;
 
+    void Update()
+    {
+        Movement();
+        shootDelay += Time.deltaTime;
+        if (shootDelay >= 0.5)
+        {
+            shootDelay -=0.5
+            Shoot();
+        }
+    }
     public override void Shoot()
     {
-        GameObject.Instantiate(bullet, transform.position, this.transform.rotation);//change rotation to the angle
-        //shoot, i need to find an angle and idk how to do that
+        GameObject.Instantiate(bullet, transform.position, this.transform.rotation);
+    }
+
+    void Movement()
+    {
+        Vector3 direction = (player.position - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rb.rotation = angle;
+        if (player.position - transform.position < distance)
+        {
+            rb.velocity = new Vector3(direction.x, direction.y) * speed;
+        } else
+        {
+            rb.velocity = Vector2.right;
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "bullet")
+        {
+            health -= 1;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
