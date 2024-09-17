@@ -20,11 +20,11 @@ public class RangedEnemy : MonoBehaviour
         shootDelay += Time.deltaTime;
         if (shootDelay >= 0.5)
         {
-            shootDelay -=0.5
+            shootDelay -=0.5f;
             Shoot();
         }
     }
-    public override void Shoot()
+    public void Shoot()
     {
         GameObject.Instantiate(bullet, transform.position, this.transform.rotation);
     }
@@ -34,7 +34,7 @@ public class RangedEnemy : MonoBehaviour
         Vector3 direction = (player.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
-        if (player.position - transform.position < distance)
+        if ((player.position - transform.position).magnitude > distance)
         {
             rb.velocity = new Vector3(direction.x, direction.y) * speed;
         } else
