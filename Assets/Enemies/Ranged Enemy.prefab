@@ -172,11 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c359c32641ca431fac17167da132dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5750714881452598140, guid: 9f6199e591b2f4293a6eccf3a55ffb3b, type: 3}
+  player: {fileID: 5375594093362685684, guid: 9f6199e591b2f4293a6eccf3a55ffb3b, type: 3}
   rb: {fileID: 9021584446812116435}
   speed: 2
   distance: 4
-  bullet: {fileID: 131841226104455528, guid: dde0310aacae842a8a536eb0e2c751e3, type: 3}
+  bullet: {fileID: 2005424555016334490, guid: 99d5a8817eb014f5bb5e21f0f25df2a2, type: 3}
   health: 2
   maxHealth: 2
 --- !u!95 &3089808946310426407
