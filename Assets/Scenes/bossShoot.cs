@@ -19,7 +19,7 @@ public class bossShoot : MonoBehaviour
     {
         shootDelay += Time.deltaTime;
         if(shootDelay >= 1f) {
-            shootDelay += -0.1f;
+            shootDelay += -1f;
 
             for(int i = 0; i <= 8; i++) {
                 GameObject.Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, i * 40 + dirTick));
