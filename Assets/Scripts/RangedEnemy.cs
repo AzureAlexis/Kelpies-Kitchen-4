@@ -5,7 +5,7 @@ using System;
 
 public class RangedEnemy : MonoBehaviour
 {
-    public Transform player;
+    public GameObject player;
     public Rigidbody2D rb;
     public int speed;
     public int distance;
@@ -31,10 +31,10 @@ public class RangedEnemy : MonoBehaviour
 
     void Movement()
     {
-        Vector3 direction = (player.position - transform.position).normalized;
+        Vector3 direction = (player.transform.position - transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
-        if ((player.position - transform.position).magnitude > distance)
+        if ((player.transform.position - transform.position).magnitude > distance)
         {
             rb.velocity = new Vector3(direction.x, direction.y) * speed;
         } else
