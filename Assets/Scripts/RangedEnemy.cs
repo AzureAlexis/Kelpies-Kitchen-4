@@ -18,9 +18,9 @@ public class RangedEnemy : MonoBehaviour
     {
         Movement();
         shootDelay += Time.deltaTime;
-        if (shootDelay >= 0.5)
+        if (shootDelay >= 0.3)
         {
-            shootDelay -=0.5f;
+            shootDelay -=0.3f;
             Shoot();
         }
     }
