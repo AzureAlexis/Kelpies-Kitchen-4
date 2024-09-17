@@ -21,4 +21,13 @@ public class enemyBulletMove : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.gameObject.name);
+        if (col.gameObject.name == "Tilemap")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -18,7 +18,7 @@ public class bossShoot : MonoBehaviour
     void Update()
     {
         shootDelay += Time.deltaTime;
-        if(shootDelay >= 0.1f) {
+        if(shootDelay >= 1f) {
             shootDelay += -0.1f;
 
             for(int i = 0; i <= 8; i++) {

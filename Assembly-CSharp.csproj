@@ -59,6 +59,7 @@
     <UnityVersion>2022.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="/Users/ahamilton4407/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.0.3/Analyzers/Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.21f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.21f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -75,6 +76,7 @@
     <Compile Include="Assets/Scenes/doors.cs" />
     <Compile Include="Assets/Scenes/enemyHealth.cs" />
     <Compile Include="Assets/Scenes/enemyBulletMove.cs" />
+    <Compile Include="Assets/Scenes/playerHP.cs" />
     <Compile Include="Assets/TextManager.cs" />
     <Compile Include="Assets/Scenes/bossShoot.cs" />
   </ItemGroup>

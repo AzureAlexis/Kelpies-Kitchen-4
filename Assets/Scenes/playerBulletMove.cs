@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,15 @@ public class playerBulletMove : MonoBehaviour
         GetComponent<Rigidbody2D>().MovePosition(transform.position += transform.right * Time.deltaTime * 20);
         relPos = cam.WorldToViewportPoint(transform.position);
         if(relPos.x > 1 || relPos.x < 0 || relPos.y > 1 || relPos.y < 0) {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.gameObject.name);
+        if (col.gameObject.name == "Tilemap")
+        {
             Destroy(gameObject);
         }
     }
